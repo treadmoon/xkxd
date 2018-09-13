@@ -1,0 +1,112 @@
+<!--index.wxml-->
+<view class="container" style='height:{{device.height+1}}px'>
+  <canvas canvas-id="mainCanvas" bindtap="showpanel" style='bottom:{{ctxObj.bottom}}px'></canvas>
+  <view class='opPanel' animation="{{animationData}}" style='width:{{device.width-2}}px'>
+    <view class='floor head_floor'>
+      <view class='floor_label' style='width:82px;'>
+        <button open-type="feedback" class='complain-btn'>
+          吐槽
+          <image src="/imgs/kf.png"></image>
+          咦
+        </button>
+      </view>
+      <view class='floor_main'></view>
+      <view class='floor_label'>
+        <button bindtap='hidepanel' class='my-btn'>完成</button>
+      </view>
+    </view>
+    <view class='floor'>
+      <view class='floor_main'>
+        <input value='{{fontObj.val}}' bindinput="changeText"/>
+      </view>
+      <view class='floor_label'>
+        <picker bindchange="pickstType" 
+                value="{{fontObj.stIndex}}" range="{{fontObj.showType}}" range-key="key">
+          <view class="weui-input">
+            {{fontObj.showType[fontObj.stIndex].key}}<image class='pick-icon' src='/imgs/up.svg'></image>
+          </view>
+          
+        </picker>
+      </view>
+    </view>
+    <view class='floor'>
+      <view class='floor_main'>
+        <slider block-color="{{slider.color}}" block-size="{{slider.size}}" 
+            value="0.5" bindchanging="changeSpeed" bindchange="changeSpeed" min="0" max="5" step="0.2" />
+      </view>
+      <view class='floor_label'>
+        播放速度
+      </view>
+    </view>
+    <view class='floor'>
+      <view class='floor_main'>
+        <slider block-color="{{slider.color}}" block-size="{{slider.size}}" 
+            value="88" bindchanging="cFontsize" bindchange="cFontsize" min="66" max="300" step="5" />
+      </view>
+      <view class='floor_label'>
+        文字大小
+      </view>
+    </view>
+    <view class='floor'>
+      <view class='floor_main'>
+        <slider block-color="{{slider.color}}" block-size="{{slider.size}}" 
+            value="1000" bindchanging="cDuration" bindchange="cDuration" min="0" max="2000" step="200" />
+      </view>
+      <view class='floor_label'>
+        变色速度
+      </view>
+    </view>
+    <view class='floor'>
+      <view class='floor_main'>
+        <radio-group class="radio-group" bindchange="radioChange">
+          <label class="radio" wx:for="{{config.colorTypes}}" wx:key="{{item.val}}">
+            <radio value="{{item.val}}" checked="{{item.checked}}"/>{{item.key}}
+          </label>
+        </radio-group>
+      </view>
+      <view class='floor_label'>
+        配色方式
+      </view>
+    </view>
+    <view class='floor color-floor' style='display:{{config.colorType==0?"":"none"}}'>
+      <scroll-view scroll-x="true" class='floor_main' style='padding:0' >
+        <radio-group class="radio-group" bindchange="changeColor">
+          <label class="radio colorRadio" wx:for="{{colorList}}" wx:key="{{item}}" style='background:{{item}};margin-top:{{fontObj.color==item?10:20}}px;'>
+            <radio  value="{{item}}" class='' style="opacity:0;" />
+          </label>
+        </radio-group>
+      </scroll-view>
+      <scroll-view class='b-tip'>选择文字的颜色，可向右滑动 -></scroll-view>
+    </view>
+    <view class='floor color-floor' style='display:{{config.colorType==1?"":"none"}};'>
+      <scroll-view scroll-x="true" class='floor_main' style='padding:0;'>
+        <checkbox-group class="checkbox-group" bindchange="checkColor">
+          <label class="checkbox" wx:for="{{ckList}}" wx:key="item.val" style='background:{{item.val}};margin-top:{{item.checked?10:20}}px;'>
+            <checkbox value="{{item.val}}" checked="{{item.checked}}" color="#ff0000" />
+          </label>
+        </checkbox-group>
+      </scroll-view>
+      <scroll-view class='b-tip'>选择轮播色(默认随机)，可向右滑动 -></scroll-view>
+    </view>
+    <view class='floor' style='display:{{config.colorType==2?"":"none"}}'>
+      <view class='floor_main' style='padding:0 5px;'>
+        <slider block-color="{{slider.color}}" block-size="{{slider.size}}" 
+              value="2.5" bindchanging="cDensity" bindchange="cDensity" min="1" max="5" step="0.4" />
+      </view>
+      <view class='floor_label'>
+        彩色密度
+      </view>
+    </view>
+    <view class='floor foot' style='display:{{config.colorType==2?"":"none"}}'>
+      <view class='foot-info'>
+        <button open-type="share" class='complain-btn' style='width:100%;'>
+          * ** **
+          忍不住的想戳一下
+          <image src="/imgs/share.svg"></image>
+          骚扰好友去
+          ** ** *
+        </button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,164 @@
+/**index.wxss**/
+
+canvas {
+  background: rgba(0, 0, 0, 1);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  height: auto;
+  transform: translate3d(0);
+  z-index: 3;
+}
+
+.opPanel {
+  width: 100%;
+  min-height: 200px;
+  position: absolute;
+  bottom: 0;
+  z-index: 5;
+  border-radius: 5px 5px 0 0;
+  box-sizing: border-box;
+  box-shadow: 0 0 3px 1px #1aad19;
+  margin: auto 1px;
+}
+
+.floor {
+  display: flex;
+  z-index: 6;
+  height: 30px;
+  line-height: 30px;
+  color: #1aad19;
+  font-size: 13px;
+  padding: 3px 0;
+}
+
+.floor_main {
+  flex: auto;
+  padding-left: 8px;
+}
+
+.floor_label {
+  width: 75px;
+  text-align: center;
+}
+
+.complain-btn {
+  position: relative;
+  font-size: 11px;
+  color: #1aad19;
+  background: transparent;
+  width: 80px;
+  padding: 2px;
+  margin: 0;
+}
+
+.complain-btn image {
+  width: 25px;
+  height: 25px;
+  vertical-align: top;
+}
+
+.my-btn {
+  width: 60px;
+  height: 24px;
+  line-height: 24px;
+  border: 1px solid #1aad19;
+  color: #1aad19;
+  background: transparent;
+  font-size: 14px;
+  padding: 0;
+  margin: 3px auto;
+}
+
+input {
+  width: 100%;
+  color: #fff;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 14px;
+  margin: 2px 0;
+  box-shadow: 0 0 1px 0 #fff;
+}
+
+slider {
+  padding: 0;
+  margin: 6px 0;
+}
+
+.radio-group {
+  display: flex;
+}
+
+.radio {
+  flex: auto;
+}
+
+radio {
+  transform: scale(0.7);
+}
+
+.color-floor {
+  height: 70px;
+}
+
+.color-floor .floor_main {
+  height: 50px;
+}
+
+.colorRadio {
+  height: 30px;
+  margin-top: 20px;
+}
+
+.checkbox-group {
+  display: flex;
+}
+
+.checkbox {
+  flex: auto;
+  margin-top: 20px;
+  height: 30px;
+}
+
+.checkbox checkbox {
+  transform: scale(0);
+}
+
+.checkbox checkbox[checked=""] {
+  transform: scale(0.1);
+}
+
+.b-tip {
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  font-size: 12px;
+  text-align: center;
+}
+
+.foot {
+  height: 38px;
+  line-height: 38px;
+  padding: 0;
+  margin-top: 2px;
+}
+
+.foot-info {
+  color: #fff;
+  text-align: center;
+  flex: 1;
+}
+
+.pick-icon {
+  width: 13px;
+  height: 15px;
+  vertical-align: text-bottom;
+}
+
+.head_floor {
+  padding: 5px 3px 2px 3px;
+  border-bottom: 1px solid #000;
+}
