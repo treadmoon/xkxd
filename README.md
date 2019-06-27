@@ -13,7 +13,7 @@
 简单说一下小程序：
 
 -<code>wxml</code>文件，就当他是HTML  
--<code>wxss</code>文件，就当他是CSS  
+-<code>wxss</code>文件，就当她是CSS  
 -<code>wxs </code>文件，你看这个文件，它又……不要唱了。他是小程序的脚本语言，可以看做小程序的JS.  
 
 ![alt 效果图](http://chuantu.xyz/t6/702/1561557717x1033347913.png)  
