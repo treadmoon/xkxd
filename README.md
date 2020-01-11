@@ -16,7 +16,7 @@
 -<code>wxss</code>文件，就当她是CSS  
 -<code>wxs </code>文件，你看这个文件，它又……不要唱了。他是小程序的脚本语言，可以看做小程序的JS.  
 
-![alt 效果图](http://chuantu.xyz/t6/702/1561557717x1033347913.png)  
+![alt 效果图](https://mlcjq.com/myimg/xkxd/1.png)  
 先放一张效果图  
 1. 先写页面，看一下wxml语法，和写HTML差不多，写过vue的人更清楚了，样式也和css一样。
 2. 画板用的就是画布<code>canvas</code>。属性控制面板的动画，直接调用小程序的API接口<code>Animation</code>,使用起来也很简单，参考官方文档即可。  
@@ -48,7 +48,7 @@ for (let i = 0; i < colors.length; i++) {
  ctx.rotate(90 * Math.PI / 180)
 ```
 旋转90度，这时候要注意了，画布的文字的坐标就要以下图为标准了：  
-![alt 效果图](http://chuantu.xyz/t6/702/1561559075x1033347913.png)  
+![alt 效果图](https://mlcjq.com/myimg/xkxd/2.png)  
 所以要使文字达到滚屏效果，正确的的方式是改变X的坐标，贴出对应代码：
 ```
 if (fontw > dheight) {
@@ -65,7 +65,7 @@ if (fontw > dheight) {
 </code>也没有找到对应的画布动画API，只能写好几个<code>setTimeout</code>和<code>setInterval</code>，这个东西用多了总归不好，但是目前只能这样。  
 
 3. 小程序居然没有调色板，这个也是没办法，我只能写一个颜色数组了，写了一些主流颜色。  
-![alt 效果图](http://chuantu.xyz/t6/702/1561559628x1033347913.png)  
+![alt 效果图](https://mlcjq.com/myimg/xkxd/3.png)  
 是的，这些颜色块其实是<code>checkbox</code>伪装的，这样就可以颜色多选了。
 
 4. 最后一个坑就是我的代码有点乱，借口是：工作还是挺忙的996呢！部门就我一个*顶梁柱*开发。（哎呀！顶梁柱歪了）
